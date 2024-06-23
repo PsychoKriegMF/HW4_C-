@@ -1,4 +1,6 @@
-﻿using System.Numerics;
+﻿using System.Net.NetworkInformation;
+using System.Numerics;
+
 
 namespace HW4_C_
 {
@@ -38,7 +40,7 @@ namespace HW4_C_
             steamship.Sound();
             Console.WriteLine();
 
-            //Задание 2. Музыкальные инструменты
+            //Задание 3. Музыкальные инструменты
             Violin violin = new Violin("Скрипка", "Струнно-смычковый музыкальный инструмент с четырьмя струнами",
                 "Самая высокая регистровая разновидность скрипичного семейства, ниже которой располагаются альт, виолончель и контрабас","как то звучит....");
             violin.Show();
@@ -79,9 +81,24 @@ namespace HW4_C_
             security.Print();
             engineer.Print();
 
+            //ДЗ модуль 4
+            //Азбука морзе
+            Console.WriteLine("Введите текст для перевода в азбуку Морзе:");
+            string input = Console.ReadLine();
+            string morseCode = Translator.TextToMorse(input);
+            Console.WriteLine("Текст в азбуке Морзе:");
+            Console.WriteLine(morseCode);
+
+            Console.WriteLine("Введите текст в азбуке Морзе для перевода в обычный текст:");
+            input = Console.ReadLine();
+            string text = Translator.MorseToText(input);
+            Console.WriteLine("Обычный текст:");
+            Console.WriteLine(text);
 
 
-
+            // Крестики нолики
+            TicTacToe ticTacToe = new TicTacToe();
+            ticTacToe.Start();
 
 
         }
